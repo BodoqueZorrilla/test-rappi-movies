@@ -26,9 +26,9 @@ _I decided to use git flow to manage the branches_
 
 ## Build it with 🛠️
 
-* [Clean Swift](https://clean-swift.com) - Architecture
+* [Clean Swift](https://clean-swift.com) - Architecture}
+* [Rx] (https://github.com/ReactiveX/RxSwift) - Reactive
 * [SDWebImage](https://github.com/SDWebImage/SDWebImage) - Images
-* [SwiftGen](https://github.com/SwiftGen/SwiftGen) - Assets and Localised type-safe to use
 
 
 ---

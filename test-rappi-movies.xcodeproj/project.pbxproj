@@ -1,0 +1,884 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		10480C026C5777995BA14F95 /* Pods_test_rappi_moviesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7168834C6CD40FE55955125E /* Pods_test_rappi_moviesTests.framework */; };
+		8C7E45862804B73000B6CB21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7E45852804B73000B6CB21 /* AppDelegate.swift */; };
+		8C7E45882804B73000B6CB21 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7E45872804B73000B6CB21 /* SceneDelegate.swift */; };
+		8C7E45902804B73000B6CB21 /* test_rappi_movies.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8C7E458E2804B73000B6CB21 /* test_rappi_movies.xcdatamodeld */; };
+		8C7E45922804B73300B6CB21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C7E45912804B73300B6CB21 /* Assets.xcassets */; };
+		8C7E45952804B73300B6CB21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C7E45932804B73300B6CB21 /* LaunchScreen.storyboard */; };
+		8C7E45A02804B73400B6CB21 /* test_rappi_moviesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7E459F2804B73400B6CB21 /* test_rappi_moviesTests.swift */; };
+		8C7E45AA2804B73400B6CB21 /* test_rappi_moviesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7E45A92804B73400B6CB21 /* test_rappi_moviesUITests.swift */; };
+		8C7E45AC2804B73400B6CB21 /* test_rappi_moviesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7E45AB2804B73400B6CB21 /* test_rappi_moviesUITestsLaunchTests.swift */; };
+		8C7E45BE2804D09400B6CB21 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7E45BD2804D09400B6CB21 /* APIService.swift */; };
+		8C7E45C12804D8EC00B6CB21 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7E45C02804D8EC00B6CB21 /* RatingView.swift */; };
+		8C7E45C32804D96E00B6CB21 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C7E45C22804D96E00B6CB21 /* Colors.xcassets */; };
+		8C7E45CB2804E8CA00B6CB21 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7E45C52804E8CA00B6CB21 /* HomePresenter.swift */; };
+		8C7E45CC2804E8CA00B6CB21 /* HomeWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7E45C62804E8CA00B6CB21 /* HomeWorker.swift */; };
+		8C7E45CD2804E8CA00B6CB21 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7E45C72804E8CA00B6CB21 /* HomeRouter.swift */; };
+		8C7E45CE2804E8CA00B6CB21 /* HomeModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7E45C82804E8CA00B6CB21 /* HomeModels.swift */; };
+		8C7E45CF2804E8CA00B6CB21 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7E45C92804E8CA00B6CB21 /* HomeViewController.swift */; };
+		8C7E45D02804E8CA00B6CB21 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7E45CA2804E8CA00B6CB21 /* HomeInteractor.swift */; };
+		8C7E45D22804EA1600B6CB21 /* VIPERConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7E45D12804EA1600B6CB21 /* VIPERConfig.swift */; };
+		8C7E45D42804FDFD00B6CB21 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7E45D32804FDFD00B6CB21 /* HomeTableViewCell.swift */; };
+		8CE856792805F00F0034A9A4 /* MoviesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE856782805F00F0034A9A4 /* MoviesCollectionViewCell.swift */; };
+		B60BFF31E1CBFEFF07A328DC /* Pods_test_rappi_movies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E40D53A026CE729F548A8A8E /* Pods_test_rappi_movies.framework */; };
+		CE8059461C955A1EF919C8F7 /* Pods_test_rappi_movies_test_rappi_moviesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 585809DE5F7B8FAF77D38DAD /* Pods_test_rappi_movies_test_rappi_moviesUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8C7E459C2804B73400B6CB21 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8C7E457A2804B73000B6CB21 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8C7E45812804B73000B6CB21;
+			remoteInfo = "test-rappi-movies";
+		};
+		8C7E45A62804B73400B6CB21 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8C7E457A2804B73000B6CB21 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8C7E45812804B73000B6CB21;
+			remoteInfo = "test-rappi-movies";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		116DF4E98C08BB0B8A1EC982 /* Pods-test-rappi-movies-test-rappi-moviesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test-rappi-movies-test-rappi-moviesUITests.release.xcconfig"; path = "Target Support Files/Pods-test-rappi-movies-test-rappi-moviesUITests/Pods-test-rappi-movies-test-rappi-moviesUITests.release.xcconfig"; sourceTree = "<group>"; };
+		182E258A46DC7F302DB56344 /* Pods-test-rappi-movies.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test-rappi-movies.release.xcconfig"; path = "Target Support Files/Pods-test-rappi-movies/Pods-test-rappi-movies.release.xcconfig"; sourceTree = "<group>"; };
+		585809DE5F7B8FAF77D38DAD /* Pods_test_rappi_movies_test_rappi_moviesUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_test_rappi_movies_test_rappi_moviesUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7168834C6CD40FE55955125E /* Pods_test_rappi_moviesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_test_rappi_moviesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		718304C6ED89CDC3D0409344 /* Pods-test-rappi-moviesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test-rappi-moviesTests.debug.xcconfig"; path = "Target Support Files/Pods-test-rappi-moviesTests/Pods-test-rappi-moviesTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8C7E45822804B73000B6CB21 /* test-rappi-movies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "test-rappi-movies.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C7E45852804B73000B6CB21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8C7E45872804B73000B6CB21 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		8C7E458F2804B73000B6CB21 /* test_rappi_movies.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = test_rappi_movies.xcdatamodel; sourceTree = "<group>"; };
+		8C7E45912804B73300B6CB21 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8C7E45942804B73300B6CB21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8C7E45962804B73300B6CB21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8C7E459B2804B73400B6CB21 /* test-rappi-moviesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "test-rappi-moviesTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C7E459F2804B73400B6CB21 /* test_rappi_moviesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test_rappi_moviesTests.swift; sourceTree = "<group>"; };
+		8C7E45A52804B73400B6CB21 /* test-rappi-moviesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "test-rappi-moviesUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C7E45A92804B73400B6CB21 /* test_rappi_moviesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test_rappi_moviesUITests.swift; sourceTree = "<group>"; };
+		8C7E45AB2804B73400B6CB21 /* test_rappi_moviesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test_rappi_moviesUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8C7E45BD2804D09400B6CB21 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		8C7E45C02804D8EC00B6CB21 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
+		8C7E45C22804D96E00B6CB21 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		8C7E45C52804E8CA00B6CB21 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		8C7E45C62804E8CA00B6CB21 /* HomeWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWorker.swift; sourceTree = "<group>"; };
+		8C7E45C72804E8CA00B6CB21 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		8C7E45C82804E8CA00B6CB21 /* HomeModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModels.swift; sourceTree = "<group>"; };
+		8C7E45C92804E8CA00B6CB21 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		8C7E45CA2804E8CA00B6CB21 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		8C7E45D12804EA1600B6CB21 /* VIPERConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIPERConfig.swift; sourceTree = "<group>"; };
+		8C7E45D32804FDFD00B6CB21 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		8CE856782805F00F0034A9A4 /* MoviesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesCollectionViewCell.swift; sourceTree = "<group>"; };
+		C32DC03229C6D4C7D4EFF638 /* Pods-test-rappi-movies.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test-rappi-movies.debug.xcconfig"; path = "Target Support Files/Pods-test-rappi-movies/Pods-test-rappi-movies.debug.xcconfig"; sourceTree = "<group>"; };
+		CCDFBEDA97A8950420827E3B /* Pods-test-rappi-movies-test-rappi-moviesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test-rappi-movies-test-rappi-moviesUITests.debug.xcconfig"; path = "Target Support Files/Pods-test-rappi-movies-test-rappi-moviesUITests/Pods-test-rappi-movies-test-rappi-moviesUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E40D53A026CE729F548A8A8E /* Pods_test_rappi_movies.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_test_rappi_movies.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7649C1E8EF25ED7BEFD3B82 /* Pods-test-rappi-moviesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test-rappi-moviesTests.release.xcconfig"; path = "Target Support Files/Pods-test-rappi-moviesTests/Pods-test-rappi-moviesTests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8C7E457F2804B73000B6CB21 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B60BFF31E1CBFEFF07A328DC /* Pods_test_rappi_movies.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8C7E45982804B73400B6CB21 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10480C026C5777995BA14F95 /* Pods_test_rappi_moviesTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8C7E45A22804B73400B6CB21 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE8059461C955A1EF919C8F7 /* Pods_test_rappi_movies_test_rappi_moviesUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2F028CF2D7C389F531164CE1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C32DC03229C6D4C7D4EFF638 /* Pods-test-rappi-movies.debug.xcconfig */,
+				182E258A46DC7F302DB56344 /* Pods-test-rappi-movies.release.xcconfig */,
+				CCDFBEDA97A8950420827E3B /* Pods-test-rappi-movies-test-rappi-moviesUITests.debug.xcconfig */,
+				116DF4E98C08BB0B8A1EC982 /* Pods-test-rappi-movies-test-rappi-moviesUITests.release.xcconfig */,
+				718304C6ED89CDC3D0409344 /* Pods-test-rappi-moviesTests.debug.xcconfig */,
+				E7649C1E8EF25ED7BEFD3B82 /* Pods-test-rappi-moviesTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		8C7E45792804B73000B6CB21 = {
+			isa = PBXGroup;
+			children = (
+				8C7E45842804B73000B6CB21 /* test-rappi-movies */,
+				8C7E459E2804B73400B6CB21 /* test-rappi-moviesTests */,
+				8C7E45A82804B73400B6CB21 /* test-rappi-moviesUITests */,
+				8C7E45832804B73000B6CB21 /* Products */,
+				2F028CF2D7C389F531164CE1 /* Pods */,
+				D25EAB2E5254A31FF55D61D2 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		8C7E45832804B73000B6CB21 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8C7E45822804B73000B6CB21 /* test-rappi-movies.app */,
+				8C7E459B2804B73400B6CB21 /* test-rappi-moviesTests.xctest */,
+				8C7E45A52804B73400B6CB21 /* test-rappi-moviesUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8C7E45842804B73000B6CB21 /* test-rappi-movies */ = {
+			isa = PBXGroup;
+			children = (
+				8C7E45BB2804CFBC00B6CB21 /* SupportingFiles */,
+				8C7E45BA2804CF9300B6CB21 /* Assets */,
+				8C7E45B82804CF6100B6CB21 /* Source */,
+				8C7E458E2804B73000B6CB21 /* test_rappi_movies.xcdatamodeld */,
+			);
+			path = "test-rappi-movies";
+			sourceTree = "<group>";
+		};
+		8C7E459E2804B73400B6CB21 /* test-rappi-moviesTests */ = {
+			isa = PBXGroup;
+			children = (
+				8C7E459F2804B73400B6CB21 /* test_rappi_moviesTests.swift */,
+			);
+			path = "test-rappi-moviesTests";
+			sourceTree = "<group>";
+		};
+		8C7E45A82804B73400B6CB21 /* test-rappi-moviesUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8C7E45A92804B73400B6CB21 /* test_rappi_moviesUITests.swift */,
+				8C7E45AB2804B73400B6CB21 /* test_rappi_moviesUITestsLaunchTests.swift */,
+			);
+			path = "test-rappi-moviesUITests";
+			sourceTree = "<group>";
+		};
+		8C7E45B82804CF6100B6CB21 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				8C7E45BF2804D8DD00B6CB21 /* UI */,
+				8C7E45BC2804D07900B6CB21 /* Networking */,
+				8C7E45B92804CF7400B6CB21 /* Scenes */,
+				8C7E45852804B73000B6CB21 /* AppDelegate.swift */,
+				8C7E45872804B73000B6CB21 /* SceneDelegate.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		8C7E45B92804CF7400B6CB21 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				8C7E45C42804E8A100B6CB21 /* Home */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		8C7E45BA2804CF9300B6CB21 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				8C7E45912804B73300B6CB21 /* Assets.xcassets */,
+				8C7E45C22804D96E00B6CB21 /* Colors.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		8C7E45BB2804CFBC00B6CB21 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				8C7E45932804B73300B6CB21 /* LaunchScreen.storyboard */,
+				8C7E45962804B73300B6CB21 /* Info.plist */,
+				8C7E45D12804EA1600B6CB21 /* VIPERConfig.swift */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		8C7E45BC2804D07900B6CB21 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				8C7E45BD2804D09400B6CB21 /* APIService.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		8C7E45BF2804D8DD00B6CB21 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				8C7E45C02804D8EC00B6CB21 /* RatingView.swift */,
+				8C7E45D32804FDFD00B6CB21 /* HomeTableViewCell.swift */,
+				8CE856782805F00F0034A9A4 /* MoviesCollectionViewCell.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		8C7E45C42804E8A100B6CB21 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				8C7E45C52804E8CA00B6CB21 /* HomePresenter.swift */,
+				8C7E45C62804E8CA00B6CB21 /* HomeWorker.swift */,
+				8C7E45C72804E8CA00B6CB21 /* HomeRouter.swift */,
+				8C7E45C82804E8CA00B6CB21 /* HomeModels.swift */,
+				8C7E45C92804E8CA00B6CB21 /* HomeViewController.swift */,
+				8C7E45CA2804E8CA00B6CB21 /* HomeInteractor.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		D25EAB2E5254A31FF55D61D2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E40D53A026CE729F548A8A8E /* Pods_test_rappi_movies.framework */,
+				585809DE5F7B8FAF77D38DAD /* Pods_test_rappi_movies_test_rappi_moviesUITests.framework */,
+				7168834C6CD40FE55955125E /* Pods_test_rappi_moviesTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8C7E45812804B73000B6CB21 /* test-rappi-movies */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8C7E45AF2804B73400B6CB21 /* Build configuration list for PBXNativeTarget "test-rappi-movies" */;
+			buildPhases = (
+				505624C3AFAC44C373D173BC /* [CP] Check Pods Manifest.lock */,
+				8C7E457E2804B73000B6CB21 /* Sources */,
+				8C7E457F2804B73000B6CB21 /* Frameworks */,
+				8C7E45802804B73000B6CB21 /* Resources */,
+				3F739A9D00FB862C3E756DC9 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "test-rappi-movies";
+			productName = "test-rappi-movies";
+			productReference = 8C7E45822804B73000B6CB21 /* test-rappi-movies.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8C7E459A2804B73400B6CB21 /* test-rappi-moviesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8C7E45B22804B73400B6CB21 /* Build configuration list for PBXNativeTarget "test-rappi-moviesTests" */;
+			buildPhases = (
+				A22B28B21D8FAE282BFE8B76 /* [CP] Check Pods Manifest.lock */,
+				8C7E45972804B73400B6CB21 /* Sources */,
+				8C7E45982804B73400B6CB21 /* Frameworks */,
+				8C7E45992804B73400B6CB21 /* Resources */,
+				A55FD66A3E15EFD883C46072 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8C7E459D2804B73400B6CB21 /* PBXTargetDependency */,
+			);
+			name = "test-rappi-moviesTests";
+			productName = "test-rappi-moviesTests";
+			productReference = 8C7E459B2804B73400B6CB21 /* test-rappi-moviesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8C7E45A42804B73400B6CB21 /* test-rappi-moviesUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8C7E45B52804B73400B6CB21 /* Build configuration list for PBXNativeTarget "test-rappi-moviesUITests" */;
+			buildPhases = (
+				F57904D57F02979BD5E824FC /* [CP] Check Pods Manifest.lock */,
+				8C7E45A12804B73400B6CB21 /* Sources */,
+				8C7E45A22804B73400B6CB21 /* Frameworks */,
+				8C7E45A32804B73400B6CB21 /* Resources */,
+				5DDA635DCC5BDEBD001A66CF /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8C7E45A72804B73400B6CB21 /* PBXTargetDependency */,
+			);
+			name = "test-rappi-moviesUITests";
+			productName = "test-rappi-moviesUITests";
+			productReference = 8C7E45A52804B73400B6CB21 /* test-rappi-moviesUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8C7E457A2804B73000B6CB21 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1330;
+				LastUpgradeCheck = 1330;
+				TargetAttributes = {
+					8C7E45812804B73000B6CB21 = {
+						CreatedOnToolsVersion = 13.3;
+					};
+					8C7E459A2804B73400B6CB21 = {
+						CreatedOnToolsVersion = 13.3;
+						TestTargetID = 8C7E45812804B73000B6CB21;
+					};
+					8C7E45A42804B73400B6CB21 = {
+						CreatedOnToolsVersion = 13.3;
+						TestTargetID = 8C7E45812804B73000B6CB21;
+					};
+				};
+			};
+			buildConfigurationList = 8C7E457D2804B73000B6CB21 /* Build configuration list for PBXProject "test-rappi-movies" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8C7E45792804B73000B6CB21;
+			productRefGroup = 8C7E45832804B73000B6CB21 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8C7E45812804B73000B6CB21 /* test-rappi-movies */,
+				8C7E459A2804B73400B6CB21 /* test-rappi-moviesTests */,
+				8C7E45A42804B73400B6CB21 /* test-rappi-moviesUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8C7E45802804B73000B6CB21 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C7E45C32804D96E00B6CB21 /* Colors.xcassets in Resources */,
+				8C7E45952804B73300B6CB21 /* LaunchScreen.storyboard in Resources */,
+				8C7E45922804B73300B6CB21 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8C7E45992804B73400B6CB21 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8C7E45A32804B73400B6CB21 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3F739A9D00FB862C3E756DC9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-test-rappi-movies/Pods-test-rappi-movies-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-test-rappi-movies/Pods-test-rappi-movies-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-test-rappi-movies/Pods-test-rappi-movies-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		505624C3AFAC44C373D173BC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-test-rappi-movies-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5DDA635DCC5BDEBD001A66CF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-test-rappi-movies-test-rappi-moviesUITests/Pods-test-rappi-movies-test-rappi-moviesUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-test-rappi-movies-test-rappi-moviesUITests/Pods-test-rappi-movies-test-rappi-moviesUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-test-rappi-movies-test-rappi-moviesUITests/Pods-test-rappi-movies-test-rappi-moviesUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A22B28B21D8FAE282BFE8B76 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-test-rappi-moviesTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A55FD66A3E15EFD883C46072 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-test-rappi-moviesTests/Pods-test-rappi-moviesTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-test-rappi-moviesTests/Pods-test-rappi-moviesTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-test-rappi-moviesTests/Pods-test-rappi-moviesTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F57904D57F02979BD5E824FC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-test-rappi-movies-test-rappi-moviesUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8C7E457E2804B73000B6CB21 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C7E45D22804EA1600B6CB21 /* VIPERConfig.swift in Sources */,
+				8C7E45CB2804E8CA00B6CB21 /* HomePresenter.swift in Sources */,
+				8C7E45D42804FDFD00B6CB21 /* HomeTableViewCell.swift in Sources */,
+				8C7E45BE2804D09400B6CB21 /* APIService.swift in Sources */,
+				8C7E45D02804E8CA00B6CB21 /* HomeInteractor.swift in Sources */,
+				8C7E45862804B73000B6CB21 /* AppDelegate.swift in Sources */,
+				8C7E45C12804D8EC00B6CB21 /* RatingView.swift in Sources */,
+				8C7E45882804B73000B6CB21 /* SceneDelegate.swift in Sources */,
+				8C7E45CE2804E8CA00B6CB21 /* HomeModels.swift in Sources */,
+				8C7E45CF2804E8CA00B6CB21 /* HomeViewController.swift in Sources */,
+				8C7E45CC2804E8CA00B6CB21 /* HomeWorker.swift in Sources */,
+				8C7E45CD2804E8CA00B6CB21 /* HomeRouter.swift in Sources */,
+				8C7E45902804B73000B6CB21 /* test_rappi_movies.xcdatamodeld in Sources */,
+				8CE856792805F00F0034A9A4 /* MoviesCollectionViewCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8C7E45972804B73400B6CB21 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C7E45A02804B73400B6CB21 /* test_rappi_moviesTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8C7E45A12804B73400B6CB21 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C7E45AC2804B73400B6CB21 /* test_rappi_moviesUITestsLaunchTests.swift in Sources */,
+				8C7E45AA2804B73400B6CB21 /* test_rappi_moviesUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8C7E459D2804B73400B6CB21 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8C7E45812804B73000B6CB21 /* test-rappi-movies */;
+			targetProxy = 8C7E459C2804B73400B6CB21 /* PBXContainerItemProxy */;
+		};
+		8C7E45A72804B73400B6CB21 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8C7E45812804B73000B6CB21 /* test-rappi-movies */;
+			targetProxy = 8C7E45A62804B73400B6CB21 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8C7E45932804B73300B6CB21 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8C7E45942804B73300B6CB21 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8C7E45AD2804B73400B6CB21 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8C7E45AE2804B73400B6CB21 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8C7E45B02804B73400B6CB21 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C32DC03229C6D4C7D4EFF638 /* Pods-test-rappi-movies.debug.xcconfig */;
+			buildSettings = {
+				API_KEY = 16ee70222ce1112fdee882ae05f0055f;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8MN2GGDPHN;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "test-rappi-movies/SupportingFiles/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "bodoque.test-rappi-movies";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8C7E45B12804B73400B6CB21 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 182E258A46DC7F302DB56344 /* Pods-test-rappi-movies.release.xcconfig */;
+			buildSettings = {
+				API_KEY = 16ee70222ce1112fdee882ae05f0055f;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8MN2GGDPHN;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "test-rappi-movies/SupportingFiles/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "bodoque.test-rappi-movies";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		8C7E45B32804B73400B6CB21 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 718304C6ED89CDC3D0409344 /* Pods-test-rappi-moviesTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "bodoque.test-rappi-moviesTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/test-rappi-movies.app/test-rappi-movies";
+			};
+			name = Debug;
+		};
+		8C7E45B42804B73400B6CB21 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E7649C1E8EF25ED7BEFD3B82 /* Pods-test-rappi-moviesTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "bodoque.test-rappi-moviesTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/test-rappi-movies.app/test-rappi-movies";
+			};
+			name = Release;
+		};
+		8C7E45B62804B73400B6CB21 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CCDFBEDA97A8950420827E3B /* Pods-test-rappi-movies-test-rappi-moviesUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "bodoque.test-rappi-moviesUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "test-rappi-movies";
+			};
+			name = Debug;
+		};
+		8C7E45B72804B73400B6CB21 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 116DF4E98C08BB0B8A1EC982 /* Pods-test-rappi-movies-test-rappi-moviesUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "bodoque.test-rappi-moviesUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "test-rappi-movies";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8C7E457D2804B73000B6CB21 /* Build configuration list for PBXProject "test-rappi-movies" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8C7E45AD2804B73400B6CB21 /* Debug */,
+				8C7E45AE2804B73400B6CB21 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8C7E45AF2804B73400B6CB21 /* Build configuration list for PBXNativeTarget "test-rappi-movies" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8C7E45B02804B73400B6CB21 /* Debug */,
+				8C7E45B12804B73400B6CB21 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8C7E45B22804B73400B6CB21 /* Build configuration list for PBXNativeTarget "test-rappi-moviesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8C7E45B32804B73400B6CB21 /* Debug */,
+				8C7E45B42804B73400B6CB21 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8C7E45B52804B73400B6CB21 /* Build configuration list for PBXNativeTarget "test-rappi-moviesUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8C7E45B62804B73400B6CB21 /* Debug */,
+				8C7E45B72804B73400B6CB21 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8C7E458E2804B73000B6CB21 /* test_rappi_movies.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8C7E458F2804B73000B6CB21 /* test_rappi_movies.xcdatamodel */,
+			);
+			currentVersion = 8C7E458F2804B73000B6CB21 /* test_rappi_movies.xcdatamodel */;
+			path = test_rappi_movies.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 8C7E457A2804B73000B6CB21 /* Project object */;
+}
