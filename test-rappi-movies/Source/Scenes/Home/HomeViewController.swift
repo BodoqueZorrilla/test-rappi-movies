@@ -36,9 +36,6 @@ class HomeViewController: UIViewController {
         return collectionView
     }()
 
-    /*var allItems = BehaviorRelay.init(value: [
-        AllMovies()
-    ])*/
     var allItems = BehaviorRelay<[AllMovies]>(value: [AllMovies()])
     private var bag = DisposeBag()
 
@@ -72,7 +69,13 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         self.showMoviews()
-        self.interactor.getMovies(request: Home.FetchMovieScene.Request())
+        self.interactor.getMovies(request: Home.FetchMovieScene.Request(type: .popular,
+                                                                        completeUrl: "movie/popular"))
+        self.interactor.getMovies(request: Home.FetchMovieScene.Request(type: .topRanked,
+                                                                        completeUrl: "movie/top_rated"))
+        self.interactor.getMovies(request: Home.FetchMovieScene.Request(type: .upcoming,
+                                                                        completeUrl: "movie/upcoming"))
+        
     }
     
     // MARK: - Configurators
@@ -100,7 +103,7 @@ class HomeViewController: UIViewController {
         ])
         moviesCollectionView.contentInset.bottom = view.safeAreaInsets.bottom
         // navigationItem.searchController = searchController
-        navigationItem.title = "Movies & Serires"
+        navigationItem.title = "Movies"
         navigationItem.hidesSearchBarWhenScrolling = false
         navigationController?.navigationBar.prefersLargeTitles = true
         
@@ -115,16 +118,13 @@ class HomeViewController: UIViewController {
        }
 
     private func createBasicTypeSection() -> NSCollectionLayoutSection {
-        // item
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.3), heightDimension: .fractionalHeight(0.75))
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.3), heightDimension: .fractionalHeight(0.90))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         item.contentInsets = .init(top: 10, leading: 5, bottom: 0, trailing: 5)
-        
-        // group
+
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.9), heightDimension: .estimated(200))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 3)
-        
-        // section
+
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .continuous
         section.contentInsets = .init(top: 0, leading: 5, bottom: 0, trailing: 5)
@@ -137,8 +137,7 @@ class HomeViewController: UIViewController {
 
     private func createSectionHeader() -> NSCollectionLayoutBoundarySupplementaryItem {
         let layoutSectionHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(30))
-        
-        // Section Header Layout
+
         let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: layoutSectionHeaderSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
         
         return sectionHeader
@@ -159,18 +158,11 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: HomeDisplayLogic {
     func displayMoviesAndSeries(viewModel: Home.FetchMovieScene.ViewModel) {
-        self.allItems.accept([AllMovies(name: "Section Maravilla", movies: viewModel.playingMovies ?? [ResultsMovies]())])
-        self.allItems.add(element: AllMovies(name: "Top Ranked", movies: viewModel.playingMovies ?? [ResultsMovies]()))
-
-    }
-}
-
-
-
-extension BehaviorRelay where Element: RangeReplaceableCollection {
-    func add(element: Element.Element) {
-        var array = self.value
-        array.append(element)
-        self.accept(array)
+        switch viewModel.section {
+        case .popular:
+            self.allItems.accept([AllMovies(name: viewModel.section.rawValue, movies: viewModel.playingMovies ?? [ResultsMovies]())])
+        default:
+            self.allItems.add(element: AllMovies(name: viewModel.section.rawValue, movies: viewModel.playingMovies ?? [ResultsMovies]()))
+        }
     }
 }

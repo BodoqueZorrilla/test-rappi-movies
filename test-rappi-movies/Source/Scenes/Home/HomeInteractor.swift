@@ -24,8 +24,8 @@ class HomeInteractor: Interactor, HomeBusinessLogic {
     let worker = HomeWorker()
     
     func getMovies(request: Home.FetchMovieScene.Request) {
-        self.worker.getMovies() { response in
-            self.presenter.presentMoviesAndSeries(response: response)
+        self.worker.getMovies(completeUrl: request.completeUrl) { response in
+            self.presenter.presentMovies(section: request.type, response: response)
         }
     }
     

@@ -16,9 +16,9 @@ class HomeWorker {
 
     private let disposeBag = DisposeBag()
     
-    func getMovies(completion: @escaping ([ResultsMovies]) -> Void) {
+    func getMovies(completeUrl: String, completion: @escaping ([ResultsMovies]) -> Void) {
         let request =  APIRequest()
-        request.baseURL = URL(string: APIStrings.mainURL + "movie/popular?api_key=16ee70222ce1112fdee882ae05f0055f")!
+        request.completeUrl = completeUrl
         let result : Observable<[ResultsMovies]> = APIService.apiCalling.getMovies(apiRequest: request)
         result.subscribe(
             onNext: { result in
@@ -26,9 +26,6 @@ class HomeWorker {
             },
             onError: { error in
                 print(error.localizedDescription)
-            },
-            onCompleted: {
-                print("Completed event.")
             }).disposed(by: disposeBag)
     }
 

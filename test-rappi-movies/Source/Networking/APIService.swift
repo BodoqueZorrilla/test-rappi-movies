@@ -19,11 +19,12 @@ public enum RequestType: String {
 }
 
 class APIRequest {
-    var baseURL = URL(string: APIStrings.mainURL)!
+    var completeUrl = String()
     var method = RequestType.GET
     var parameters = [String: String]()
 
-    func request(with baseURL: URL) -> URLRequest {
+    func request(with completeUrl: String) -> URLRequest {
+        let baseURL =  URL(string: APIStrings.mainURL + completeUrl + "?api_key=\(APIStrings.apiKey ?? "")")!
         var request = URLRequest(url: baseURL)
         request.httpMethod = method.rawValue
         request.addValue("application/json", forHTTPHeaderField: "Accept")
@@ -38,11 +39,11 @@ class APIService {
 
     func getMovies<T: Codable>(apiRequest: APIRequest) -> Observable<T> {
         return Observable<T>.create { observer in
-            let request = apiRequest.request(with: apiRequest.baseURL)
+            let request = apiRequest.request(with: apiRequest.completeUrl)
             let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
                 do {
                     let model: ReponseMainMovies = try JSONDecoder().decode(ReponseMainMovies.self, from: data ?? Data())
-                    observer.onNext( model.results as! T)
+                     observer.onNext( model.results as! T )
                 } catch let error {
                     observer.onError(error)
                 }

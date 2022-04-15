@@ -13,16 +13,26 @@ import UIKit
 import RxDataSources
 
 enum Home {
+
+    enum SectionsTitle: String {
+        case popular = "Popular"
+        case topRanked = "Top Ranked"
+        case upcoming = "Upcoming"
+    }
     
     enum FetchMovieScene {
         
-        struct Request {}
+        struct Request {
+            var type: SectionsTitle
+            var completeUrl: String
+        }
         
         struct Response {
             var playingMovies: ReponseMainMovies?
         }
         
         struct ViewModel {
+            var section: SectionsTitle
             var playingMovies: [ResultsMovies]?
         }
     }

@@ -12,7 +12,7 @@
 import UIKit
 
 protocol HomePresentationLogic {
-    func presentMoviesAndSeries(response: [ResultsMovies])
+    func presentMovies(section: Home.SectionsTitle, response: [ResultsMovies])
 }
 
 class HomePresenter: Presenter, HomePresentationLogic {
@@ -21,8 +21,8 @@ class HomePresenter: Presenter, HomePresentationLogic {
         return self._view as! HomeDisplayLogic
     }()
     
-    func presentMoviesAndSeries(response: [ResultsMovies]) {
-        let viewModel = Home.FetchMovieScene.ViewModel(playingMovies: response)
+    func presentMovies(section: Home.SectionsTitle, response: [ResultsMovies]) {
+        let viewModel = Home.FetchMovieScene.ViewModel(section: section, playingMovies: response)
         view.displayMoviesAndSeries(viewModel: viewModel)
     }
 }
