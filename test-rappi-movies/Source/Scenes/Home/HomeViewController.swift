@@ -90,7 +90,7 @@ class HomeViewController: UIViewController {
     // MARK: - Private
 
     private func setupUI() {
-        
+        moviesCollectionView.backgroundColor = .black
         moviesCollectionView.register(MoviesCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
         moviesCollectionView.register(ContentCollectionViewHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "cellHeader")
         moviesCollectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -144,12 +144,12 @@ class HomeViewController: UIViewController {
     }
 
     private func showMoviews() {
-        DispatchQueue.main.async { [weak self] in
-            guard let self = self else { return }
-            self.allItems
-                .bind(to: self.moviesCollectionView.rx.items(dataSource: self.dataSource))
-                .disposed(by: self.bag)
-        }
+        self.allItems
+            .bind(to: self.moviesCollectionView.rx.items(dataSource: self.dataSource))
+            .disposed(by: self.bag)
+        self.moviesCollectionView.rx.modelSelected(ResultsMovies.self).subscribe(onNext: { model in
+            self.router.showDetailMovie(idMovie: model.id ?? 0)
+        }).disposed(by: self.bag)
     }
     
     // MARK: - Actions

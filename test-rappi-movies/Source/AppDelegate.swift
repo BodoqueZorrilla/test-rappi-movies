@@ -13,7 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        UINavigationBar.appearance().customNavigationBar()
         return true
     }
 
@@ -61,3 +61,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+
+extension UINavigationBar {
+    func customNavigationBar() {
+        self.tintColor = UIColor.white
+        self.barTintColor = .white
+        self.isTranslucent = false
+        self.prefersLargeTitles = true
+
+        self.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        self.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+
+        self.setBackgroundImage(UIImage(), for: .default)
+        self.shadowImage = UIImage()
+    }
+}
