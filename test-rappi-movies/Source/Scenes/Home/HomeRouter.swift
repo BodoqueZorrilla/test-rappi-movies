@@ -12,7 +12,7 @@
 import UIKit
 
 protocol HomeRoutingLogic {
-    func routeToSomewhere()
+    func showDetailMovie(idMovie: Int)
 }
 
 class HomeRouter: Router, HomeRoutingLogic {
@@ -21,8 +21,27 @@ class HomeRouter: Router, HomeRoutingLogic {
         return self._view as! HomeViewController
     }()
     
-    func routeToSomewhere() {
+    func showDetailMovie(idMovie: Int) {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            let detailMovieViewController = MovieDetailViewController()
+
+            guard var destination = detailMovieViewController.router?.dataStore else {
+                return
+            }
+            self.passDataToDetail(source: idMovie, destination: &destination)
+            self.navigateToSomewhere(source: self.view, destination: detailMovieViewController)
+        }
         
     }
+
+    // MARK: - Helpers
+    private func passDataToDetail(source: Int, destination: inout MovieDetailDataStore) {
+        destination.idMovie = source
+    }
     
+    func navigateToSomewhere(source: HomeViewController, destination: MovieDetailViewController) {
+        destination.modalPresentationStyle = .fullScreen
+        source.navigationController?.pushViewController(destination, animated: false)
+    }
 }

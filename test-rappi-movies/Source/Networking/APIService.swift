@@ -56,4 +56,44 @@ class APIService {
             }
         }
     }
+
+    func getMovieDetail<T: Codable>(apiRequest: APIRequest) -> Observable<T> {
+        return Observable<T>.create { observer in
+            let request = apiRequest.request(with: apiRequest.completeUrl)
+            let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+                do {
+                    let model: ReponseDetailMovie = try JSONDecoder().decode(ReponseDetailMovie.self, from: data ?? Data())
+                    observer.onNext( model as! T )
+                } catch let error {
+                    observer.onError(error)
+                }
+                observer.onCompleted()
+            }
+            task.resume()
+            
+            return Disposables.create {
+                task.cancel()
+            }
+        }
+    }
+
+    func getMovieVideo<T: Codable>(apiRequest: APIRequest) -> Observable<T> {
+        return Observable<T>.create { observer in
+            let request = apiRequest.request(with: apiRequest.completeUrl)
+            let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+                do {
+                    let model: MovieVideo = try JSONDecoder().decode(MovieVideo.self, from: data ?? Data())
+                    observer.onNext( model as! T )
+                } catch let error {
+                    observer.onError(error)
+                }
+                observer.onCompleted()
+            }
+            task.resume()
+            
+            return Disposables.create {
+                task.cancel()
+            }
+        }
+    }
 }
