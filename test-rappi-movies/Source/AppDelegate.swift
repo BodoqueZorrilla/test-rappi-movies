@@ -60,19 +60,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 }
-
-
-extension UINavigationBar {
-    func customNavigationBar() {
-        self.tintColor = UIColor.white
-        self.barTintColor = .white
-        self.isTranslucent = false
-        self.prefersLargeTitles = true
-
-        self.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        self.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-
-        self.setBackgroundImage(UIImage(), for: .default)
-        self.shadowImage = UIImage()
-    }
-}

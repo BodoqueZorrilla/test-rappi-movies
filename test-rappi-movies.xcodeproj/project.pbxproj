@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		10480C026C5777995BA14F95 /* Pods_test_rappi_moviesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7168834C6CD40FE55955125E /* Pods_test_rappi_moviesTests.framework */; };
 		8C626BF0280DE521009D84CD /* DateFormatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C626BEF280DE521009D84CD /* DateFormatter+Extension.swift */; };
+		8C626BF6280E53D4009D84CD /* NavigationBar+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C626BF5280E53D4009D84CD /* NavigationBar+Extension.swift */; };
 		8C7CF98C2809D812008734FC /* BehaviorRelay+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7CF98B2809D812008734FC /* BehaviorRelay+Extension.swift */; };
 		8C7CF9942809E79A008734FC /* MovieDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7CF98E2809E79A008734FC /* MovieDetailPresenter.swift */; };
 		8C7CF9952809E79A008734FC /* MovieDetailWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7CF98F2809E79A008734FC /* MovieDetailWorker.swift */; };
@@ -63,6 +64,7 @@
 		7168834C6CD40FE55955125E /* Pods_test_rappi_moviesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_test_rappi_moviesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		718304C6ED89CDC3D0409344 /* Pods-test-rappi-moviesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test-rappi-moviesTests.debug.xcconfig"; path = "Target Support Files/Pods-test-rappi-moviesTests/Pods-test-rappi-moviesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8C626BEF280DE521009D84CD /* DateFormatter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extension.swift"; sourceTree = "<group>"; };
+		8C626BF5280E53D4009D84CD /* NavigationBar+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NavigationBar+Extension.swift"; sourceTree = "<group>"; };
 		8C7CF98B2809D812008734FC /* BehaviorRelay+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BehaviorRelay+Extension.swift"; sourceTree = "<group>"; };
 		8C7CF98E2809E79A008734FC /* MovieDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailPresenter.swift; sourceTree = "<group>"; };
 		8C7CF98F2809E79A008734FC /* MovieDetailWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailWorker.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 			children = (
 				8C7CF98B2809D812008734FC /* BehaviorRelay+Extension.swift */,
 				8C626BEF280DE521009D84CD /* DateFormatter+Extension.swift */,
+				8C626BF5280E53D4009D84CD /* NavigationBar+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -571,6 +574,7 @@
 				8C7E45902804B73000B6CB21 /* test_rappi_movies.xcdatamodeld in Sources */,
 				8CE856792805F00F0034A9A4 /* MoviesCollectionViewCell.swift in Sources */,
 				8C7CF9952809E79A008734FC /* MovieDetailWorker.swift in Sources */,
+				8C626BF6280E53D4009D84CD /* NavigationBar+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

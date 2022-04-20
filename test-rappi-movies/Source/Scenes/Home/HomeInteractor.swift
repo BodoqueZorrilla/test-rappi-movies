@@ -14,6 +14,7 @@ import Foundation
 
 protocol HomeBusinessLogic {
     func getMovies(request: Home.FetchMovieScene.Request)
+    func getMoviesSearch(query: String)
 }
 
 class HomeInteractor: Interactor, HomeBusinessLogic {
@@ -26,6 +27,12 @@ class HomeInteractor: Interactor, HomeBusinessLogic {
     func getMovies(request: Home.FetchMovieScene.Request) {
         self.worker.getMovies(completeUrl: request.completeUrl) { response in
             self.presenter.presentMovies(section: request.type, response: response)
+        }
+    }
+
+    func getMoviesSearch(query: String) {
+        self.worker.getMoviesSearch(completeUrl: query) { response in
+            self.presenter.presentMoviesSearch(response: response)
         }
     }
     

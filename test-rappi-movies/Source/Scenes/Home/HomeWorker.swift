@@ -29,5 +29,18 @@ class HomeWorker {
             }).disposed(by: disposeBag)
     }
 
+    func getMoviesSearch(completeUrl: String, completion: @escaping ([ResultsMovies]) -> Void) {
+        let request =  APIRequest()
+        request.completeUrl = completeUrl
+        let result : Observable<[ResultsMovies]> = APIService.apiCalling.getMoviesSearch(apiRequest: request)
+        result.subscribe(
+            onNext: { result in
+                completion(result)
+            },
+            onError: { error in
+                print(error.localizedDescription)
+            }).disposed(by: disposeBag)
+    }
+
     
 }
