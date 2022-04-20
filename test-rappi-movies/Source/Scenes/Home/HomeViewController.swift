@@ -18,6 +18,7 @@ import SDWebImage
 
 protocol HomeDisplayLogic: View {
     func displayMoviesAndSeries(viewModel: Home.FetchMovieScene.ViewModel)
+    func displayMoviesSearch(response: [ResultsMovies])
 }
 
 class HomeViewController: UIViewController {
@@ -36,8 +37,18 @@ class HomeViewController: UIViewController {
         return collectionView
     }()
 
+    private let searchController: UISearchController = {
+      let searchController = UISearchController(searchResultsController: nil)
+      searchController.searchBar.placeholder = "Buscar Pelicula"
+      return searchController
+    }()
+
+    private let searchTableView = UITableView()
+    private let searchCellIdentifier = "searchCellIdentifier"
+
     var allItems = BehaviorRelay<[AllMovies]>(value: [AllMovies()])
     private var bag = DisposeBag()
+    var searchItems = BehaviorRelay<[ResultsMovies]>(value: [ResultsMovies()])
 
     let dataSource = RxCollectionViewSectionedReloadDataSource<AllMovies>(configureCell: {
         _, cv, ip, item in
@@ -69,12 +80,29 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         self.showMoviews()
+        self.displaySearchMovies()
         self.interactor.getMovies(request: Home.FetchMovieScene.Request(type: .popular,
                                                                         completeUrl: "movie/popular"))
         self.interactor.getMovies(request: Home.FetchMovieScene.Request(type: .topRanked,
                                                                         completeUrl: "movie/top_rated"))
         self.interactor.getMovies(request: Home.FetchMovieScene.Request(type: .upcoming,
                                                                         completeUrl: "movie/upcoming"))
+
+        searchController.searchBar
+            .rx.text
+            .orEmpty
+            .debounce(.milliseconds(500), scheduler: MainScheduler.instance)
+            .subscribe(onNext: { [unowned self] query in
+                if query.count > 2 {
+                    let realQuery = query.replacingOccurrences(of: " ", with: "%20")
+                    self.interactor.getMoviesSearch(query: "search/movie?query=\(realQuery)")
+                } else {
+                    DispatchQueue.main.async {
+                        self.searchTableView.isHidden = true
+                    }
+                }
+            })
+            .disposed(by: bag)
         
     }
     
@@ -95,14 +123,23 @@ class HomeViewController: UIViewController {
         moviesCollectionView.register(ContentCollectionViewHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "cellHeader")
         moviesCollectionView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(moviesCollectionView)
+        searchTableView.register(UITableViewCell.self, forCellReuseIdentifier: searchCellIdentifier)
+        searchTableView.translatesAutoresizingMaskIntoConstraints = false
+        searchTableView.isHidden = true
+        view.addSubview(searchTableView)
         NSLayoutConstraint.activate([
             moviesCollectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             moviesCollectionView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
             moviesCollectionView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
-            moviesCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            moviesCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            searchTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            searchTableView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
+            searchTableView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
+            searchTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
         moviesCollectionView.contentInset.bottom = view.safeAreaInsets.bottom
-        // navigationItem.searchController = searchController
+        searchTableView.contentInset.bottom = view.safeAreaInsets.bottom
+        navigationItem.searchController = searchController
         navigationItem.title = "Movies"
         navigationItem.hidesSearchBarWhenScrolling = false
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -147,9 +184,26 @@ class HomeViewController: UIViewController {
         self.allItems
             .bind(to: self.moviesCollectionView.rx.items(dataSource: self.dataSource))
             .disposed(by: self.bag)
-        self.moviesCollectionView.rx.modelSelected(ResultsMovies.self).subscribe(onNext: { model in
-            self.router.showDetailMovie(idMovie: model.id ?? 0)
+        self.moviesCollectionView.rx.modelSelected(ResultsMovies.self).subscribe(onNext: {[weak self] model in
+            self?.router.showDetailMovie(idMovie: model.id ?? 0)
         }).disposed(by: self.bag)
+    }
+
+    private func displaySearchMovies() {
+        searchItems.asObservable()
+            .bind(to: searchTableView.rx
+                .items(cellIdentifier: searchCellIdentifier, cellType: UITableViewCell.self))
+        { index, element, cell in
+            cell.textLabel?.textColor = .white
+            cell.textLabel?.text = element.title
+        }.disposed(by: self.bag)
+
+        searchTableView.rx.modelSelected(ResultsMovies.self)
+            .subscribe(onNext: { [weak self] model in
+                self?.router.showDetailMovie(idMovie: model.id ?? 0)
+            }).disposed(by: self.bag)
+        
+        searchTableView.tableFooterView = UIView()
     }
     
     // MARK: - Actions
@@ -163,6 +217,13 @@ extension HomeViewController: HomeDisplayLogic {
             self.allItems.accept([AllMovies(name: viewModel.section.rawValue, movies: viewModel.playingMovies ?? [ResultsMovies]())])
         default:
             self.allItems.add(element: AllMovies(name: viewModel.section.rawValue, movies: viewModel.playingMovies ?? [ResultsMovies]()))
+        }
+    }
+
+    func displayMoviesSearch(response: [ResultsMovies]) {
+        DispatchQueue.main.async {
+            self.searchTableView.isHidden = false
+            self.searchItems.accept(response)
         }
     }
 }
