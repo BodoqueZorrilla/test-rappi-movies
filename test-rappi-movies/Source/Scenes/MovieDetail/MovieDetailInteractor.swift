@@ -15,6 +15,8 @@ import Foundation
 protocol MovieDetailBusinessLogic {
     func fetchMovieDetail()
     func fetchVideo()
+    func saveCacheMovie(request: MovieDetail.FetchDetailMovie.ViewModel)
+    func fetchMovieDetailOffline()
 }
 
 protocol MovieDetailDataStore {
@@ -49,5 +51,23 @@ class MovieDetailInteractor: Interactor, MovieDetailBusinessLogic, MovieDetailDa
             }
         }
     }
-    
+
+    func saveCacheMovie(request: MovieDetail.FetchDetailMovie.ViewModel) {
+        let voMovie = VOMovie(id: Int64(idMovie),
+                              title: request.title ?? "",
+                              overview: request.overview ?? "",
+                              date: request.datetime ?? "",
+                              voteAverage: request.voteAverage ?? 0.0,
+                              genders: request.genres?.first?.name ?? "",
+                              image: "",
+                              section: "")
+
+        CoreDataMovieManager.shared.updateMovie(voMovie)
+    }
+
+    func fetchMovieDetailOffline() {
+        self.worker.getMovieDetailOffline(movieId: idMovie) { response in
+            self.presenter.presentDetailMovieScene(response: response)
+        }
+    }
 }

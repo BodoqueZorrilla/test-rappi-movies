@@ -77,8 +77,13 @@ class MoviesCollectionViewCell: UICollectionViewCell {
                 
             }
             if let imagePath = movieItem.posterPath {
-                movieImageView.sd_setImage(with: URL(string: "\(APIStrings.imagesURL)\(imagePath)"),
-                                           completed: nil)
+                if Reachability.isConnectedToNetwork() {
+                    movieImageView.sd_setImage(with: URL(string: "\(APIStrings.imagesURL)\(imagePath)"),
+                                               completed: nil)
+                } else {
+                    let image = UIImage().fromBase64(data: imagePath)
+                    movieImageView.image = image
+                }
             }
         }
     }

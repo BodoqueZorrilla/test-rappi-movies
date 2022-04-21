@@ -17,7 +17,7 @@ import RxDataSources
 import SDWebImage
 
 protocol HomeDisplayLogic: View {
-    func displayMoviesAndSeries(viewModel: Home.FetchMovieScene.ViewModel)
+    func displayMovies(viewModel: Home.FetchMovieScene.ViewModel)
     func displayMoviesSearch(response: [ResultsMovies])
 }
 
@@ -38,9 +38,10 @@ class HomeViewController: UIViewController {
     }()
 
     private let searchController: UISearchController = {
-      let searchController = UISearchController(searchResultsController: nil)
-      searchController.searchBar.placeholder = "Buscar Pelicula"
-      return searchController
+        let searchController = UISearchController(searchResultsController: nil)
+        searchController.searchBar.placeholder = "Buscar Pelicula"
+        searchController.searchBar.backgroundColor = .black
+        return searchController
     }()
 
     private let searchTableView = UITableView()
@@ -81,12 +82,19 @@ class HomeViewController: UIViewController {
         setupUI()
         self.showMoviews()
         self.displaySearchMovies()
-        self.interactor.getMovies(request: Home.FetchMovieScene.Request(type: .popular,
-                                                                        completeUrl: "movie/popular"))
-        self.interactor.getMovies(request: Home.FetchMovieScene.Request(type: .topRanked,
-                                                                        completeUrl: "movie/top_rated"))
-        self.interactor.getMovies(request: Home.FetchMovieScene.Request(type: .upcoming,
-                                                                        completeUrl: "movie/upcoming"))
+
+        if Reachability.isConnectedToNetwork() {
+            self.interactor.getMovies(request: Home.FetchMovieScene.Request(type: .popular,
+                                                                            completeUrl: "movie/popular"))
+            self.interactor.getMovies(request: Home.FetchMovieScene.Request(type: .topRanked,
+                                                                            completeUrl: "movie/top_rated"))
+            self.interactor.getMovies(request: Home.FetchMovieScene.Request(type: .upcoming,
+                                                                            completeUrl: "movie/upcoming"))
+        } else {
+            self.interactor.getMoviesOffline(section: Home.SectionsTitle.popular.rawValue)
+            self.interactor.getMoviesOffline(section: Home.SectionsTitle.topRanked.rawValue)
+            self.interactor.getMoviesOffline(section: Home.SectionsTitle.upcoming.rawValue)
+        }
 
         searchController.searchBar
             .rx.text
@@ -94,8 +102,14 @@ class HomeViewController: UIViewController {
             .debounce(.milliseconds(500), scheduler: MainScheduler.instance)
             .subscribe(onNext: { [unowned self] query in
                 if query.count > 2 {
-                    let realQuery = query.replacingOccurrences(of: " ", with: "%20")
-                    self.interactor.getMoviesSearch(query: "search/movie?query=\(realQuery)")
+                    if Reachability.isConnectedToNetwork() {
+                        let realQuery = query.replacingOccurrences(of: " ", with: "%20")
+                        self.interactor.getMoviesSearch(query: "search/movie?query=\(realQuery)",
+                                                        isOnline: true)
+                    } else {
+                        self.interactor.getMoviesSearch(query: query,
+                                                        isOnline: false)
+                    }
                 } else {
                     DispatchQueue.main.async {
                         self.searchTableView.isHidden = true
@@ -103,7 +117,6 @@ class HomeViewController: UIViewController {
                 }
             })
             .disposed(by: bag)
-        
     }
     
     // MARK: - Configurators
@@ -126,6 +139,7 @@ class HomeViewController: UIViewController {
         searchTableView.register(UITableViewCell.self, forCellReuseIdentifier: searchCellIdentifier)
         searchTableView.translatesAutoresizingMaskIntoConstraints = false
         searchTableView.isHidden = true
+        searchTableView.backgroundColor = .black
         view.addSubview(searchTableView)
         NSLayoutConstraint.activate([
             moviesCollectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
@@ -195,6 +209,7 @@ class HomeViewController: UIViewController {
                 .items(cellIdentifier: searchCellIdentifier, cellType: UITableViewCell.self))
         { index, element, cell in
             cell.textLabel?.textColor = .white
+            cell.backgroundColor = .black
             cell.textLabel?.text = element.title
         }.disposed(by: self.bag)
 
@@ -211,12 +226,24 @@ class HomeViewController: UIViewController {
 }
 
 extension HomeViewController: HomeDisplayLogic {
-    func displayMoviesAndSeries(viewModel: Home.FetchMovieScene.ViewModel) {
+    func displayMovies(viewModel: Home.FetchMovieScene.ViewModel) {
         switch viewModel.section {
         case .popular:
             self.allItems.accept([AllMovies(name: viewModel.section.rawValue, movies: viewModel.playingMovies ?? [ResultsMovies]())])
         default:
             self.allItems.add(element: AllMovies(name: viewModel.section.rawValue, movies: viewModel.playingMovies ?? [ResultsMovies]()))
+        }
+        if Reachability.isConnectedToNetwork() {
+            self.interactor.saveCacheMovies(request: viewModel)
+        } else {
+            if viewModel.playingMovies?.count ?? 0 < 1 {
+                DispatchQueue.main.async {
+                    Tools.showAlert(title: "Sin conexión",
+                                    message: "Para ver el contenido offline es necesario primero ingresar con conexión a internet 🥳", titleForTheAction: "Aceptar", in: self, titleForCancelAction: "") {
+                        print("hello Rappi")
+                    }
+                }
+            }
         }
     }
 

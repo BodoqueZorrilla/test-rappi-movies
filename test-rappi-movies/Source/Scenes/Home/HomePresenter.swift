@@ -24,7 +24,7 @@ class HomePresenter: Presenter, HomePresentationLogic {
     
     func presentMovies(section: Home.SectionsTitle, response: [ResultsMovies]) {
         let viewModel = Home.FetchMovieScene.ViewModel(section: section, playingMovies: response)
-        view.displayMoviesAndSeries(viewModel: viewModel)
+        view.displayMovies(viewModel: viewModel)
     }
 
     func presentMoviesSearch(response: [ResultsMovies]) {
