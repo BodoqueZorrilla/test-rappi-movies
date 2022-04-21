@@ -13,9 +13,8 @@ class CoreDataMovieManager: NSObject {
     static let shared = CoreDataMovieManager()
     
     func saveMovies(_ movies: [VOMovie]) {
-        let moc = AppDelegate.appDelegate.managedObjectContext
-        
         movies.forEach { movie in
+            let moc = AppDelegate.appDelegate.managedObjectContext
             let coreDataMovie = MMovies(context: moc!)
             coreDataMovie.id = NSNumber(value: movie.id)
             coreDataMovie.title = movie.title
@@ -25,7 +24,6 @@ class CoreDataMovieManager: NSObject {
             coreDataMovie.vote_average = (movie.voteAverage) as NSNumber
             coreDataMovie.image = movie.image
             coreDataMovie.section = movie.section
-
             do {
                 try moc!.save()
             } catch _ as NSError {
