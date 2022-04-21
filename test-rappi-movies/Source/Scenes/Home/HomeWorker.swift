@@ -42,5 +42,65 @@ class HomeWorker {
             }).disposed(by: disposeBag)
     }
 
+    func getMoviesSearchOffline(query: String, completion: @escaping ([ResultsMovies]) -> Void) {
+        let moviesCache = CoreDataMovieManager.shared.getMovies()
+        let sectionMovies = moviesCache.filter { $0.title.contains(query) }
+
+        var resultMovies = [ResultsMovies]()
+        sectionMovies.forEach { movie in
+            print(movie.title)
+            print(movie.section)
+            let resultMovie = ResultsMovies(adult: false,
+                                            backdropPath: "",
+                                            firstAirDate: movie.date,
+                                            genreIds: [Int](),
+                                            id: Int(movie.id),
+                                            originCountry: [String](),
+                                        originalLanguage: "",
+                                            originalTitle: movie.title,
+                                            originalName: movie.title,
+                                            overview: movie.overview,
+                                            popularity: movie.voteAverage,
+                                            posterPath: movie.image,
+                                            releaseDate: movie.date,
+                                            title: movie.title,
+                                            video: false,
+                                            voteAverage: movie.voteAverage,
+                                            voteCount: 33)
+            resultMovies.append(resultMovie)
+        }
+        completion(resultMovies)
+    }
+
+    func getMoviesOffline(section: String, completion: @escaping ([ResultsMovies]) -> Void) {
+        let moviesCache = CoreDataMovieManager.shared.getMovies()
+        let sectionMovies = moviesCache.filter { $0.section == section }
+
+        var resultMovies = [ResultsMovies]()
+        sectionMovies.forEach { movie in
+            print(movie.title)
+            print(movie.section)
+            let resultMovie = ResultsMovies(adult: false,
+                                            backdropPath: "",
+                                            firstAirDate: movie.date,
+                                            genreIds: [Int](),
+                                            id: Int(movie.id),
+                                            originCountry: [String](),
+                                        originalLanguage: "",
+                                            originalTitle: movie.title,
+                                            originalName: movie.title,
+                                            overview: movie.overview,
+                                            popularity: movie.voteAverage,
+                                            posterPath: movie.image,
+                                            releaseDate: movie.date,
+                                            title: movie.title,
+                                            video: false,
+                                            voteAverage: movie.voteAverage,
+                                            voteCount: 33)
+            resultMovies.append(resultMovie)
+        }
+        completion(resultMovies)
+    }
+
     
 }

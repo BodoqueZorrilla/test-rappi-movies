@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		10480C026C5777995BA14F95 /* Pods_test_rappi_moviesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7168834C6CD40FE55955125E /* Pods_test_rappi_moviesTests.framework */; };
+		8C046E5E28109DBD00C4451C /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C046E5D28109DBC00C4451C /* UIImage+Extension.swift */; };
 		8C626BF0280DE521009D84CD /* DateFormatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C626BEF280DE521009D84CD /* DateFormatter+Extension.swift */; };
 		8C626BF6280E53D4009D84CD /* NavigationBar+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C626BF5280E53D4009D84CD /* NavigationBar+Extension.swift */; };
 		8C7CF98C2809D812008734FC /* BehaviorRelay+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7CF98B2809D812008734FC /* BehaviorRelay+Extension.swift */; };
@@ -19,7 +20,6 @@
 		8C7CF9992809E79A008734FC /* MovieDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7CF9932809E79A008734FC /* MovieDetailInteractor.swift */; };
 		8C7E45862804B73000B6CB21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7E45852804B73000B6CB21 /* AppDelegate.swift */; };
 		8C7E45882804B73000B6CB21 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7E45872804B73000B6CB21 /* SceneDelegate.swift */; };
-		8C7E45902804B73000B6CB21 /* test_rappi_movies.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8C7E458E2804B73000B6CB21 /* test_rappi_movies.xcdatamodeld */; };
 		8C7E45922804B73300B6CB21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C7E45912804B73300B6CB21 /* Assets.xcassets */; };
 		8C7E45952804B73300B6CB21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C7E45932804B73300B6CB21 /* LaunchScreen.storyboard */; };
 		8C7E45A02804B73400B6CB21 /* test_rappi_moviesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7E459F2804B73400B6CB21 /* test_rappi_moviesTests.swift */; };
@@ -35,6 +35,11 @@
 		8C7E45CF2804E8CA00B6CB21 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7E45C92804E8CA00B6CB21 /* HomeViewController.swift */; };
 		8C7E45D02804E8CA00B6CB21 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7E45CA2804E8CA00B6CB21 /* HomeInteractor.swift */; };
 		8C7E45D22804EA1600B6CB21 /* VIPERConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7E45D12804EA1600B6CB21 /* VIPERConfig.swift */; };
+		8CA44C20280FA14E00BA7997 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA44C1F280FA14E00BA7997 /* Reachability.swift */; };
+		8CA44C23280FA56000BA7997 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA44C22280FA56000BA7997 /* CoreDataManager.swift */; };
+		8CA44C25280FA60900BA7997 /* MMoview+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA44C24280FA60900BA7997 /* MMoview+CoreDataClass.swift */; };
+		8CA857B82810BDC9008BB77E /* test_rappi_movies.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8CA857B62810BDC9008BB77E /* test_rappi_movies.xcdatamodeld */; };
+		8CA857BA2810EDAD008BB77E /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA857B92810EDAD008BB77E /* Tools.swift */; };
 		8CE856792805F00F0034A9A4 /* MoviesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE856782805F00F0034A9A4 /* MoviesCollectionViewCell.swift */; };
 		B60BFF31E1CBFEFF07A328DC /* Pods_test_rappi_movies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E40D53A026CE729F548A8A8E /* Pods_test_rappi_movies.framework */; };
 		CE8059461C955A1EF919C8F7 /* Pods_test_rappi_movies_test_rappi_moviesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 585809DE5F7B8FAF77D38DAD /* Pods_test_rappi_movies_test_rappi_moviesUITests.framework */; };
@@ -63,6 +68,7 @@
 		585809DE5F7B8FAF77D38DAD /* Pods_test_rappi_movies_test_rappi_moviesUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_test_rappi_movies_test_rappi_moviesUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7168834C6CD40FE55955125E /* Pods_test_rappi_moviesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_test_rappi_moviesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		718304C6ED89CDC3D0409344 /* Pods-test-rappi-moviesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test-rappi-moviesTests.debug.xcconfig"; path = "Target Support Files/Pods-test-rappi-moviesTests/Pods-test-rappi-moviesTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8C046E5D28109DBC00C4451C /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		8C626BEF280DE521009D84CD /* DateFormatter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extension.swift"; sourceTree = "<group>"; };
 		8C626BF5280E53D4009D84CD /* NavigationBar+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NavigationBar+Extension.swift"; sourceTree = "<group>"; };
 		8C7CF98B2809D812008734FC /* BehaviorRelay+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BehaviorRelay+Extension.swift"; sourceTree = "<group>"; };
@@ -75,7 +81,6 @@
 		8C7E45822804B73000B6CB21 /* test-rappi-movies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "test-rappi-movies.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C7E45852804B73000B6CB21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C7E45872804B73000B6CB21 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8C7E458F2804B73000B6CB21 /* test_rappi_movies.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = test_rappi_movies.xcdatamodel; sourceTree = "<group>"; };
 		8C7E45912804B73300B6CB21 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8C7E45942804B73300B6CB21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8C7E45962804B73300B6CB21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -94,6 +99,11 @@
 		8C7E45C92804E8CA00B6CB21 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8C7E45CA2804E8CA00B6CB21 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		8C7E45D12804EA1600B6CB21 /* VIPERConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIPERConfig.swift; sourceTree = "<group>"; };
+		8CA44C1F280FA14E00BA7997 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		8CA44C22280FA56000BA7997 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		8CA44C24280FA60900BA7997 /* MMoview+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MMoview+CoreDataClass.swift"; sourceTree = "<group>"; };
+		8CA857B72810BDC9008BB77E /* test_rappi_movies.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = test_rappi_movies.xcdatamodel; sourceTree = "<group>"; };
+		8CA857B92810EDAD008BB77E /* Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
 		8CE856782805F00F0034A9A4 /* MoviesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesCollectionViewCell.swift; sourceTree = "<group>"; };
 		C32DC03229C6D4C7D4EFF638 /* Pods-test-rappi-movies.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test-rappi-movies.debug.xcconfig"; path = "Target Support Files/Pods-test-rappi-movies/Pods-test-rappi-movies.debug.xcconfig"; sourceTree = "<group>"; };
 		CCDFBEDA97A8950420827E3B /* Pods-test-rappi-movies-test-rappi-moviesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test-rappi-movies-test-rappi-moviesUITests.debug.xcconfig"; path = "Target Support Files/Pods-test-rappi-movies-test-rappi-moviesUITests/Pods-test-rappi-movies-test-rappi-moviesUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -148,6 +158,7 @@
 				8C7CF98B2809D812008734FC /* BehaviorRelay+Extension.swift */,
 				8C626BEF280DE521009D84CD /* DateFormatter+Extension.swift */,
 				8C626BF5280E53D4009D84CD /* NavigationBar+Extension.swift */,
+				8C046E5D28109DBC00C4451C /* UIImage+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -193,7 +204,7 @@
 				8C7E45BB2804CFBC00B6CB21 /* SupportingFiles */,
 				8C7E45BA2804CF9300B6CB21 /* Assets */,
 				8C7E45B82804CF6100B6CB21 /* Source */,
-				8C7E458E2804B73000B6CB21 /* test_rappi_movies.xcdatamodeld */,
+				8CA857B62810BDC9008BB77E /* test_rappi_movies.xcdatamodeld */,
 			);
 			path = "test-rappi-movies";
 			sourceTree = "<group>";
@@ -218,6 +229,7 @@
 		8C7E45B82804CF6100B6CB21 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				8CA44C21280FA54D00BA7997 /* Utils */,
 				8C7CF98A2809D7EC008734FC /* Extensions */,
 				8C7E45BF2804D8DD00B6CB21 /* UI */,
 				8C7E45BC2804D07900B6CB21 /* Networking */,
@@ -260,6 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				8C7E45BD2804D09400B6CB21 /* APIService.swift */,
+				8CA44C1F280FA14E00BA7997 /* Reachability.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -284,6 +297,16 @@
 				8C7E45CA2804E8CA00B6CB21 /* HomeInteractor.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		8CA44C21280FA54D00BA7997 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				8CA44C22280FA56000BA7997 /* CoreDataManager.swift */,
+				8CA44C24280FA60900BA7997 /* MMoview+CoreDataClass.swift */,
+				8CA857B92810EDAD008BB77E /* Tools.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		D25EAB2E5254A31FF55D61D2 /* Frameworks */ = {
@@ -558,20 +581,25 @@
 				8C7E45CB2804E8CA00B6CB21 /* HomePresenter.swift in Sources */,
 				8C7CF9962809E79A008734FC /* MovieDetailRouter.swift in Sources */,
 				8C7E45BE2804D09400B6CB21 /* APIService.swift in Sources */,
+				8CA857B82810BDC9008BB77E /* test_rappi_movies.xcdatamodeld in Sources */,
 				8C7E45D02804E8CA00B6CB21 /* HomeInteractor.swift in Sources */,
+				8CA44C23280FA56000BA7997 /* CoreDataManager.swift in Sources */,
 				8C7CF98C2809D812008734FC /* BehaviorRelay+Extension.swift in Sources */,
 				8C7E45862804B73000B6CB21 /* AppDelegate.swift in Sources */,
 				8C7E45C12804D8EC00B6CB21 /* RatingView.swift in Sources */,
 				8C7E45882804B73000B6CB21 /* SceneDelegate.swift in Sources */,
 				8C7E45CE2804E8CA00B6CB21 /* HomeModels.swift in Sources */,
 				8C7CF9942809E79A008734FC /* MovieDetailPresenter.swift in Sources */,
+				8C046E5E28109DBD00C4451C /* UIImage+Extension.swift in Sources */,
+				8CA857BA2810EDAD008BB77E /* Tools.swift in Sources */,
 				8C7E45CF2804E8CA00B6CB21 /* HomeViewController.swift in Sources */,
 				8C7E45CC2804E8CA00B6CB21 /* HomeWorker.swift in Sources */,
 				8C7CF9982809E79A008734FC /* MovieDetailViewController.swift in Sources */,
+				8CA44C20280FA14E00BA7997 /* Reachability.swift in Sources */,
 				8C7CF9972809E79A008734FC /* MovieDetailModels.swift in Sources */,
+				8CA44C25280FA60900BA7997 /* MMoview+CoreDataClass.swift in Sources */,
 				8C7E45CD2804E8CA00B6CB21 /* HomeRouter.swift in Sources */,
 				8C626BF0280DE521009D84CD /* DateFormatter+Extension.swift in Sources */,
-				8C7E45902804B73000B6CB21 /* test_rappi_movies.xcdatamodeld in Sources */,
 				8CE856792805F00F0034A9A4 /* MoviesCollectionViewCell.swift in Sources */,
 				8C7CF9952809E79A008734FC /* MovieDetailWorker.swift in Sources */,
 				8C626BF6280E53D4009D84CD /* NavigationBar+Extension.swift in Sources */,
@@ -918,12 +946,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		8C7E458E2804B73000B6CB21 /* test_rappi_movies.xcdatamodeld */ = {
+		8CA857B62810BDC9008BB77E /* test_rappi_movies.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				8C7E458F2804B73000B6CB21 /* test_rappi_movies.xcdatamodel */,
+				8CA857B72810BDC9008BB77E /* test_rappi_movies.xcdatamodel */,
 			);
-			currentVersion = 8C7E458F2804B73000B6CB21 /* test_rappi_movies.xcdatamodel */;
+			currentVersion = 8CA857B72810BDC9008BB77E /* test_rappi_movies.xcdatamodel */;
 			path = test_rappi_movies.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

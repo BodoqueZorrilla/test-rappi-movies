@@ -107,8 +107,13 @@ class MovieDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUI()
-        self.interactor.fetchMovieDetail()
-        self.interactor.fetchVideo()
+        if Reachability.isConnectedToNetwork() {
+            self.interactor.fetchMovieDetail()
+            self.interactor.fetchVideo()
+        } else {
+            self.interactor.fetchMovieDetailOffline()
+        }
+        
     }
     
     // MARK: - Configurators
@@ -182,7 +187,7 @@ class MovieDetailViewController: UIViewController {
         <iframe width="100%" height="97%" src="https://www.youtube.com/embed/\(keyVideo)?playsinline=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         """
     }
-    
+
     // MARK: - Actions
     
     
@@ -198,6 +203,18 @@ extension MovieDetailViewController: MovieDetailDisplayLogic {
             self.ratingView.percent = viewModel.voteAverage ?? 0.0
             self.ratingView.setNeedsLayout()
             self.ratingView.layoutIfNeeded()
+        }
+        if Reachability.isConnectedToNetwork() {
+            self.interactor.saveCacheMovie(request: viewModel)
+        }else {
+            if viewModel.overview?.count ?? 0 < 1 {
+                DispatchQueue.main.async {
+                    Tools.showAlert(title: "Sin conexión",
+                                    message: "Para ver el contenido offline es necesario primero ingresar con conexión a internet 🥳", titleForTheAction: "Aceptar", in: self, titleForCancelAction: "") {
+                        print("hello Rappi")
+                    }
+                }
+            }
         }
     }
 

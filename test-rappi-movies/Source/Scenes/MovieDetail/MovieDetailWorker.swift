@@ -29,6 +29,13 @@ class MovieDetailWorker {
             }).disposed(by: disposeBag)
     }
 
+    func getMovieDetailOffline(movieId: Int, completion: @escaping (MovieDetail.FetchDetailMovie.Response) -> Void) {
+        let movieCache = CoreDataMovieManager.shared.getMovie(movieId)
+        let detailMovie = ReponseDetailMovie(id: Int(movieCache.id), adult: false, backdropPath: movieCache.image, belongsToCollection: BelongsToCollection(), budget: 333, genres: [Genres](), homepage: "", imdbId: "iddbId", originalLanguage: "", originalTitle: movieCache.title, overview: movieCache.overview, popularity: movieCache.voteAverage, posterPath: movieCache.image, productionCompanies: [ProductionCompanies](), productionCountries: [ProductionCountries](), releaseDate: movieCache.date, revenue: 333, runtime: 3, spokenLanguages: [SpokenLanguages](), status: "", tagline: "", title: movieCache.title, video: false, voteAverage: movieCache.voteAverage, voteCount: 333)
+        let response = MovieDetail.FetchDetailMovie.Response(reponseDetailMovie: detailMovie)
+        completion(response)
+    }
+
     func getMovieVideo(movieId: Int, completion: @escaping (MovieVideo) -> Void) {
         let request =  APIRequest()
         request.completeUrl = "movie/\(movieId)/videos"

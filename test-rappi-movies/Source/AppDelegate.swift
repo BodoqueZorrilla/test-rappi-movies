@@ -11,9 +11,25 @@ import CoreData
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    static var realDelegate: AppDelegate?
+    static var appDelegate: AppDelegate {
+        if Thread.isMainThread {
+            return UIApplication.shared.delegate as! AppDelegate
+        }
+        let dg = DispatchGroup()
+        dg.enter()
+        DispatchQueue.main.async {
+            realDelegate = UIApplication.shared.delegate as? AppDelegate
+            dg.leave()
+        }
+        dg.wait()
+        return realDelegate!
+    }
+
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         UINavigationBar.appearance().customNavigationBar()
+        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).defaultTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         return true
     }
 
@@ -27,10 +43,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     // MARK: - Core Data stack
-    lazy var persistentContainer: NSPersistentContainer = {
+    static var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "test_rappi_movies")
         
         container.loadPersistentStores { description, error in
+            container.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
             if let error = error {
                 print("CORE DATA", "App store not loaded")
             }
@@ -41,13 +58,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }()
     
     lazy var managedObjectContext: NSManagedObjectContext? = {
-        return persistentContainer.viewContext
+        return Self.persistentContainer.viewContext
     }()
 
     // MARK: - Core Data Saving support
 
     func saveContext () {
-        let context = persistentContainer.viewContext
+        let context = Self.persistentContainer.viewContext
         if context.hasChanges {
             do {
                 try context.save()

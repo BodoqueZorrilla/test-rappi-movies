@@ -10,8 +10,8 @@ import UIKit
 
 extension UINavigationBar {
     func customNavigationBar() {
-        self.tintColor = UIColor.white
-        self.barTintColor = .white
+        self.tintColor = .white
+        self.barTintColor = .black
         self.isTranslucent = false
         self.prefersLargeTitles = true
 
