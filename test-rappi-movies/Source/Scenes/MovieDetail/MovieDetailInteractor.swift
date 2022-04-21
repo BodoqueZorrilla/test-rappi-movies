@@ -27,7 +27,7 @@ class MovieDetailInteractor: Interactor, MovieDetailBusinessLogic, MovieDetailDa
     lazy var presenter: MovieDetailPresentationLogic = {
         return self._presenter as! MovieDetailPresentationLogic
     }()
-    let worker = MovieDetailWorker()
+    var worker: MovieDetailWorkerInterface = MovieDetailWorker()
     var idMovie: Int = 0
 
     func fetchMovieDetail() {

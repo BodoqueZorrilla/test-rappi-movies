@@ -12,7 +12,13 @@
 import UIKit
 import RxSwift
 
-class MovieDetailWorker {
+protocol MovieDetailWorkerInterface {
+    func getMovieDetail(movieId: Int, completion: @escaping (MovieDetail.FetchDetailMovie.Response) -> Void)
+    func getMovieDetailOffline(movieId: Int, completion: @escaping (MovieDetail.FetchDetailMovie.Response) -> Void)
+    func getMovieVideo(movieId: Int, completion: @escaping (MovieVideo) -> Void)
+}
+
+class MovieDetailWorker: MovieDetailWorkerInterface {
     private let disposeBag = DisposeBag()
 
     func getMovieDetail(movieId: Int, completion: @escaping (MovieDetail.FetchDetailMovie.Response) -> Void) {

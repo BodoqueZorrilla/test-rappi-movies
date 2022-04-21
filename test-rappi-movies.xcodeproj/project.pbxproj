@@ -22,7 +22,6 @@
 		8C7E45882804B73000B6CB21 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7E45872804B73000B6CB21 /* SceneDelegate.swift */; };
 		8C7E45922804B73300B6CB21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C7E45912804B73300B6CB21 /* Assets.xcassets */; };
 		8C7E45952804B73300B6CB21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C7E45932804B73300B6CB21 /* LaunchScreen.storyboard */; };
-		8C7E45A02804B73400B6CB21 /* test_rappi_moviesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7E459F2804B73400B6CB21 /* test_rappi_moviesTests.swift */; };
 		8C7E45AA2804B73400B6CB21 /* test_rappi_moviesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7E45A92804B73400B6CB21 /* test_rappi_moviesUITests.swift */; };
 		8C7E45AC2804B73400B6CB21 /* test_rappi_moviesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7E45AB2804B73400B6CB21 /* test_rappi_moviesUITestsLaunchTests.swift */; };
 		8C7E45BE2804D09400B6CB21 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7E45BD2804D09400B6CB21 /* APIService.swift */; };
@@ -40,6 +39,8 @@
 		8CA44C25280FA60900BA7997 /* MMoview+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA44C24280FA60900BA7997 /* MMoview+CoreDataClass.swift */; };
 		8CA857B82810BDC9008BB77E /* test_rappi_movies.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8CA857B62810BDC9008BB77E /* test_rappi_movies.xcdatamodeld */; };
 		8CA857BA2810EDAD008BB77E /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA857B92810EDAD008BB77E /* Tools.swift */; };
+		8CA857BC2810F48E008BB77E /* MovieHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA857BB2810F48E008BB77E /* MovieHome.swift */; };
+		8CA857BE2810FC6E008BB77E /* MovieDetailTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA857BD2810FC6E008BB77E /* MovieDetailTests.swift */; };
 		8CE856792805F00F0034A9A4 /* MoviesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE856782805F00F0034A9A4 /* MoviesCollectionViewCell.swift */; };
 		B60BFF31E1CBFEFF07A328DC /* Pods_test_rappi_movies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E40D53A026CE729F548A8A8E /* Pods_test_rappi_movies.framework */; };
 		CE8059461C955A1EF919C8F7 /* Pods_test_rappi_movies_test_rappi_moviesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 585809DE5F7B8FAF77D38DAD /* Pods_test_rappi_movies_test_rappi_moviesUITests.framework */; };
@@ -85,7 +86,6 @@
 		8C7E45942804B73300B6CB21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8C7E45962804B73300B6CB21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C7E459B2804B73400B6CB21 /* test-rappi-moviesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "test-rappi-moviesTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8C7E459F2804B73400B6CB21 /* test_rappi_moviesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test_rappi_moviesTests.swift; sourceTree = "<group>"; };
 		8C7E45A52804B73400B6CB21 /* test-rappi-moviesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "test-rappi-moviesUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C7E45A92804B73400B6CB21 /* test_rappi_moviesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test_rappi_moviesUITests.swift; sourceTree = "<group>"; };
 		8C7E45AB2804B73400B6CB21 /* test_rappi_moviesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test_rappi_moviesUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -104,6 +104,8 @@
 		8CA44C24280FA60900BA7997 /* MMoview+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MMoview+CoreDataClass.swift"; sourceTree = "<group>"; };
 		8CA857B72810BDC9008BB77E /* test_rappi_movies.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = test_rappi_movies.xcdatamodel; sourceTree = "<group>"; };
 		8CA857B92810EDAD008BB77E /* Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
+		8CA857BB2810F48E008BB77E /* MovieHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieHome.swift; sourceTree = "<group>"; };
+		8CA857BD2810FC6E008BB77E /* MovieDetailTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailTests.swift; sourceTree = "<group>"; };
 		8CE856782805F00F0034A9A4 /* MoviesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesCollectionViewCell.swift; sourceTree = "<group>"; };
 		C32DC03229C6D4C7D4EFF638 /* Pods-test-rappi-movies.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test-rappi-movies.debug.xcconfig"; path = "Target Support Files/Pods-test-rappi-movies/Pods-test-rappi-movies.debug.xcconfig"; sourceTree = "<group>"; };
 		CCDFBEDA97A8950420827E3B /* Pods-test-rappi-movies-test-rappi-moviesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test-rappi-movies-test-rappi-moviesUITests.debug.xcconfig"; path = "Target Support Files/Pods-test-rappi-movies-test-rappi-moviesUITests/Pods-test-rappi-movies-test-rappi-moviesUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -212,7 +214,8 @@
 		8C7E459E2804B73400B6CB21 /* test-rappi-moviesTests */ = {
 			isa = PBXGroup;
 			children = (
-				8C7E459F2804B73400B6CB21 /* test_rappi_moviesTests.swift */,
+				8CA857BB2810F48E008BB77E /* MovieHome.swift */,
+				8CA857BD2810FC6E008BB77E /* MovieDetailTests.swift */,
 			);
 			path = "test-rappi-moviesTests";
 			sourceTree = "<group>";
@@ -610,7 +613,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C7E45A02804B73400B6CB21 /* test_rappi_moviesTests.swift in Sources */,
+				8CA857BC2810F48E008BB77E /* MovieHome.swift in Sources */,
+				8CA857BE2810FC6E008BB77E /* MovieDetailTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
