@@ -90,15 +90,17 @@ class CoreDataMovieManager: NSObject {
         
         do {
             let fetchedMovie = try moc!.fetch(movieFetchRequest)
-            let coreDataMovie = fetchedMovie[0]
-            coreDataMovie.overview = movie.overview
-            coreDataMovie.genders = movie.genders
-            coreDataMovie.date = movie.date
-            coreDataMovie.vote_average = (movie.voteAverage) as NSNumber
-            do {
-                try moc!.save()
-            } catch _ as NSError {
-                
+            if fetchedMovie.count > 0 {
+                let coreDataMovie = fetchedMovie[0]
+                coreDataMovie.overview = movie.overview
+                coreDataMovie.genders = movie.genders
+                coreDataMovie.date = movie.date
+                coreDataMovie.vote_average = (movie.voteAverage) as NSNumber
+                do {
+                    try moc!.save()
+                } catch _ as NSError {
+                    
+                }
             }
         } catch {
             fatalError("Failed to update Movie: \(error)")
