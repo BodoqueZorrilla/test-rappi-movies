@@ -12,7 +12,14 @@
 import UIKit
 import RxSwift
 
-class HomeWorker {
+protocol HomeWorkerInterface {
+    func getMovies(completeUrl: String, completion: @escaping ([ResultsMovies]) -> Void)
+    func getMoviesSearch(completeUrl: String, completion: @escaping ([ResultsMovies]) -> Void)
+    func getMoviesSearchOffline(query: String, completion: @escaping ([ResultsMovies]) -> Void)
+    func getMoviesOffline(section: String, completion: @escaping ([ResultsMovies]) -> Void)
+}
+
+class HomeWorker: HomeWorkerInterface {
 
     private let disposeBag = DisposeBag()
     

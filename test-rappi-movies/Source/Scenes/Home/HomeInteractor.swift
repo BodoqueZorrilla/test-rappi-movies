@@ -25,7 +25,7 @@ class HomeInteractor: Interactor, HomeBusinessLogic {
     lazy var presenter: HomePresentationLogic = {
         return self._presenter as! HomePresentationLogic
     }()
-    let worker = HomeWorker()
+    var worker: HomeWorkerInterface = HomeWorker()
     
     func getMovies(request: Home.FetchMovieScene.Request) {
         self.worker.getMovies(completeUrl: request.completeUrl) { response in
